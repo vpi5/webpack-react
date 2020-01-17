@@ -199,6 +199,11 @@ module.exports = function(webpackEnv) {
       // module chunks which are built will work in web workers as well.
       globalObject: 'this',
     },
+    externals: {
+      "react": "React",
+      "react-dom": "ReactDOM",
+      'jquery': 'jQuery',
+    },
     optimization: {
       minimize: isEnvProduction,
       minimizer: [
@@ -453,6 +458,14 @@ module.exports = function(webpackEnv) {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
               }),
+            },
+            {
+              test: /\.less$/,
+              use: [
+                {loader: 'style-loader'},
+                {loader: 'css-loader'},
+                {loader: 'less-loader'}
+              ]
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the

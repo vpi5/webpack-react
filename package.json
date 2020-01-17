@@ -2,6 +2,7 @@
   "name": "my-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@babel/core": "7.7.4",
     "@babel/helper-create-regexp-features-plugin": "^7.8.3",
@@ -15,11 +16,12 @@
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
+    "babel-plugin-import": "^1.13.0",
     "babel-plugin-named-asset-import": "^0.3.5",
     "babel-preset-react-app": "^9.1.0",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "css-loader": "3.2.0",
+    "css-loader": "^3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^6.6.0",
@@ -56,7 +58,7 @@
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.0",
     "semver": "6.3.0",
-    "style-loader": "1.0.0",
+    "style-loader": "^1.1.2",
     "terser-webpack-plugin": "2.2.1",
     "ts-pnp": "1.1.5",
     "url-loader": "2.3.0",
@@ -139,5 +141,10 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "antd": "^3.26.7",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0"
   }
 }
