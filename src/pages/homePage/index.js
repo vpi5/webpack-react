@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  *
  *  @param HomePage
@@ -21,7 +20,7 @@ export default class HomePage extends React.Component{
 
     render(){
         return (
-            <div>
+            <div onClick={() => {}}>
                 HomePage
             </div>
         )
