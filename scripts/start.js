@@ -4,6 +4,28 @@
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
+
+/*== 添加项目启动文件配置，开始 ====================================================================*/
+// 判断 配置文件是否存在
+if(process.argv.length < 3){
+  throw new Error('启动参数不正确!');
+}
+// 添加配置文件写入
+if(process.argv.length >= 3){
+  let configKey = process.argv[2];
+  try {
+    let path = require('path');
+    let configFile = require(`../src/utils/shellConfig/config.${configKey}.js`);
+    let writeConfigFun = require('./upDateItems');
+    // 路径开头的/不会影响拼接，..代表上一级文件，拼接出来的结果是：E:/webpack-react/public/config.js
+    writeConfigFun(configFile, path.join(__dirname,'..', 'public/config.js'));
+  }catch (e) {
+    throw new Error('启动的配置文件不存在!');
+  }
+}
+/*== 添加项目启动文件配置，结束 ====================================================================*/
+
+
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.

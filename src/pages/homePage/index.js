@@ -12,7 +12,9 @@ export default class HomePage extends React.Component{
         this.state = {};
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+        console.log(webConfig)
+    }
 
     componentWillReceiveProps(){}
 
